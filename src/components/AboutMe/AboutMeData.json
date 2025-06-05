@@ -1,0 +1,57 @@
+{
+    "imageUrl": "",
+    "name": "Mansoor Khan",
+    "profession": "Technical 3D Artist",
+    "websiteUrl": "mansoorysfxi.github.io/Portfolio",
+    "email": "mansoorkhan@gmail.com",
+    "phoneNumber": "+92 333 456 5679",
+    "linkedInUrl": "https://pk.linkedin.com/in/mansoor-khan-a1b4101b9",
+    "gitHubUrl": "https://github.com/Mansoorysfxi",
+    "instagramUrl": "https://www.instagram.com/mansoorysfxi/",
+    "arrayOfWorkExperiences": [
+        {
+            "nameOfWorkPlace": "Synapsify",
+            "roleAtWorkPlace": "Senior Technical Artist - Unreal Engine",
+            "durationAtWorkPlace": " Feb 2024 - Present",
+            "descriptionAboutWork": [
+                "Synapsify is a pioneering technology consulting firm that excels in navigating the cutting-edge realms of AI, web, mobile, cloud, 3D and the IoT.",
+                [
+                    "Photorealistic Synthetic Data Generation – Crafting highly realistic synthetic datasets to accelerate AI training and testing.",
+                    "Custom Sensor Development for Segmentation – Designing specialized sensors tailored to precise data capture and segmentation needs.",
+                    "Environment Design Tools – Building robust, intuitive tools that streamline the creation of interactive and dynamic virtual environments.",
+                    "Complex Material Creation – Developing sophisticated, customizable materials for realistic rendering and simulation."
+                ]
+            ]
+        },
+        {
+            "nameOfWorkPlace": "XR Hive, SINES-NUST",
+            "roleAtWorkPlace": "Technical Artist - Unreal Engine",
+            "durationAtWorkPlace": "June 2022 - Feb 2024",
+            "descriptionAboutWork": [
+                "An institution known for its multidisciplinary postgraduate programs that combine fundamental research with practical applications. The institution values research as a powerful form of experiential learning, fostering innovation through a 'learning by doing' approach.",
+                [
+                    "Optimized 3D Model Creation for VR Applications – Developed high-performance, low-polygon 3D assets tailored for immersive virtual reality environments.",
+                    "Functional Prototyping in Unreal Engine – Implemented interactive features and component behaviors using Blueprints, enabling rapid development and testing within the Unreal Engine ecosystem."
+                ]
+            ]
+        },
+        {
+            "nameOfWorkPlace": "Blenwiq",
+            "roleAtWorkPlace": "3D Generalist",
+            "durationAtWorkPlace": "June 2021 - Aug 2022",
+            "descriptionAboutWork": [
+                "Blenwiq is a multidisciplinary creative studio founded in 2020 by two college students, Waqar and Roshaan. At blenwiq, we believe that there is always a better alternative for effective marketing. We believe that customers are earned not bought.",
+                [
+                    "Created 3D models and animations. Used software like Blender, Substance Painter, After Effects and Premiere Pro for creating engaging content."
+                ]
+            ]
+        }
+    ],
+    "arrayOfStackIconURLs": [
+        "url for icon 1",
+        "url for icon 2",
+        "url for icon 3",
+        "url for icon 4",
+        "url for icon 5"
+    ]
+}
