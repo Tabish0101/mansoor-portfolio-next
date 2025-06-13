@@ -2,6 +2,7 @@
 
 import { AboutMe } from "@/components/AboutMe/AboutMe";
 import { Hero } from "@/components/Hero/Hero";
+import ProjectsSection from "@/components/ProjectsSection/ProjectsSection";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -135,7 +136,8 @@ export default function Home() {
         heroCount={heroCount}
         heroData={heroData[heroCount]}
       /> */}
-      <AboutMe/>
+      {/* <AboutMe/> */}
+      <ProjectsSection/>
     </div>
 
   );

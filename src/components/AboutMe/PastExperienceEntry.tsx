@@ -41,7 +41,7 @@ const PastExperienceEntry: React.FC<propsPastExperienceEntry> = ({
             <ul className='mt-1'>
               {description[1].map((e: string) => {
                 return(
-                  <div className='flex pl-2' >
+                  <div className='flex pl-0' >
                     <span>🔸</span>
                     <li className='ml-1'>{e}</li>
                   </div>
