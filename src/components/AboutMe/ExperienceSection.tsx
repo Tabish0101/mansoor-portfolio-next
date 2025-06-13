@@ -21,9 +21,9 @@ const ExperienceSection = () => {
         <div className='overflow-auto grow scrollbar-custom'>
             <div className='flex flex-col gap-12'>
                 {
-                  aboutMeData.arrayOfWorkExperiences.map((e) => {
+                  aboutMeData.arrayOfWorkExperiences.map((e, index) => {
                     return(
-                      <PastExperienceEntry nameOfCompany={e.nameOfWorkPlace} duration={e.durationAtWorkPlace} roleAtCompany={e.roleAtWorkPlace} description={e.descriptionAboutWork as [string, string[]]}/>
+                      <PastExperienceEntry key={index} nameOfCompany={e.nameOfWorkPlace} duration={e.durationAtWorkPlace} roleAtCompany={e.roleAtWorkPlace} description={e.descriptionAboutWork as [string, string[]]}/>
                     )
                   })
                 }

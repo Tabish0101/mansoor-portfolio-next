@@ -129,15 +129,15 @@ export default function Home() {
     //   </div>
     // </div>
     <div className={``}>
-      {/* <Hero 
+      <Hero 
         setPlayStatus={setPlayStatus}
         playStatus={playStatus}
         setHeroCount={setHeroCount}
         heroCount={heroCount}
         heroData={heroData[heroCount]}
-      /> */}
+      />
       {/* <AboutMe/> */}
-      <ProjectsSection/>
+      {/* <ProjectsSection/> */}
     </div>
 
   );

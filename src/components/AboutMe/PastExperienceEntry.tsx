@@ -35,7 +35,7 @@ const PastExperienceEntry: React.FC<propsPastExperienceEntry> = ({
               <p className='font-semibold pr-2 text-[#2C3E50] text-[16px]'>{roleAtCompany}</p>
             </div>
         </div>
-        <div className='text-[#7F8C8D] text-[12px]'>
+        <div className='text-[#2C3E50] text-[12px]'>
           <p>
             {description[0]}
             <ul className='mt-1'>

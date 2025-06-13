@@ -1,7 +1,9 @@
+"use client";
+
 import React from 'react'
 import { IoLogoLinkedin } from "react-icons/io";
 import { FaGithub } from "react-icons/fa";
-import { IoLogoWhatsapp } from "react-icons/io";
+// import { IoLogoWhatsapp } from "react-icons/io";
 import { FaInstagram } from "react-icons/fa";
 
 import aboutMeData from './AboutMeData.json'
