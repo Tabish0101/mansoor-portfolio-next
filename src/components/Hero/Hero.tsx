@@ -28,7 +28,7 @@ heroCount,
 heroData,
 }) => {
 return (
-<div className="hero flex flex-col justify-end gap-20 sm:gap-5 grow p-2 pb-5 sm:p-4">
+<div className="hero flex flex-col justify-end gap-20 sm:gap-5 grow p-2 pb-5 sm:p-4 h-full">
     <div className="hero-text text-[48px] sm:text-[64px]">
         <p>{heroData.text1}</p>
         <p>{heroData.text2}</p>
