@@ -1,7 +1,9 @@
+"use client";
+
 import React from 'react'
 import { IoLogoLinkedin } from "react-icons/io";
 import { FaGithub } from "react-icons/fa";
-import { IoLogoWhatsapp } from "react-icons/io";
+// import { IoLogoWhatsapp } from "react-icons/io";
 import { FaInstagram } from "react-icons/fa";
 
 import aboutMeData from './AboutMeData.json'
@@ -50,9 +52,9 @@ const BioSection = () => {
                     </div>
                 </div>
                 <div className="flex gap-3"> 
-                    <div onClick={() => redirectToNewPage(aboutMeData.linkedInUrl)} className="text-2xl flex justify-center items-center text-[#2C3E50] hover:text-[#E67E22]/70 cursor-pointer"><IoLogoLinkedin/></div>
-                    <div onClick={() => redirectToNewPage(aboutMeData.gitHubUrl)} className="text-xl flex justify-center items-center text-[#2C3E50] hover:text-[#E67E22]/70 cursor-pointer"><FaGithub/></div>
-                    <div onClick={() => redirectToNewPage(aboutMeData.instagramUrl)} className="text-xl flex justify-center items-center text-[#2C3E50] hover:text-[#E67E22]/70 cursor-pointer"><FaInstagram/></div>
+                    <div onClick={() => redirectToNewPage(aboutMeData.linkedInUrl)} className="text-2xl flex justify-center items-center text-[#2C3E50] hover:text-[#2C3E50]/70 cursor-pointer"><IoLogoLinkedin/></div>
+                    <div onClick={() => redirectToNewPage(aboutMeData.gitHubUrl)} className="text-xl flex justify-center items-center text-[#2C3E50] hover:text-[#2C3E50]/70 cursor-pointer"><FaGithub/></div>
+                    <div onClick={() => redirectToNewPage(aboutMeData.instagramUrl)} className="text-xl flex justify-center items-center text-[#2C3E50] hover:text-[#2C3E50]/70 cursor-pointer"><FaInstagram/></div>
                 </div>
             </div>
 

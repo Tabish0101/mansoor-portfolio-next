@@ -35,20 +35,20 @@ const PastExperienceEntry: React.FC<propsPastExperienceEntry> = ({
               <p className='font-semibold pr-2 text-[#2C3E50] text-[16px]'>{roleAtCompany}</p>
             </div>
         </div>
-        <div className='text-[#7F8C8D] text-[12px]'>
-          <p>
+        <div className='text-[#2C3E50] text-[12px]'>
+          <div>
             {description[0]}
             <ul className='mt-1'>
-              {description[1].map((e: string) => {
+              {description[1].map((e: string, index:number) => {
                 return(
-                  <div className='flex pl-2' >
+                  <span key={index} className='flex pl-0' >
                     <span>🔸</span>
                     <li className='ml-1'>{e}</li>
-                  </div>
+                  </span>
                 )
               })}
             </ul>
-          </p>
+          </div>
         </div>
     </div>
   )

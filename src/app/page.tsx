@@ -1,8 +1,11 @@
 "use client";
 
-import { AboutMe } from "@/components/AboutMe/AboutMe";
+import { Background } from "@/components/Background/Background";
+// import { AboutMe } from "@/components/AboutMe/AboutMe";
 import { Hero } from "@/components/Hero/Hero";
-import Image from "next/image";
+import NavBar  from "@/components/NavBar/NavBar";
+// import ProjectsSection from "@/components/ProjectsSection/ProjectsSection";
+// import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -12,7 +15,7 @@ export default function Home() {
     {text1: "Innovative 3D Solutions", text2: "for the Digital Age"}
   ]
   const [heroCount, setHeroCount] = useState(0);
-  const [playStatus, setPlayStatus] = useState(true);
+  const [playStatus, setPlayStatus] = useState(false);
 
   const url = '';
 
@@ -23,6 +26,35 @@ export default function Home() {
   }, []); // end useEffect
 
   return (
+    // <div className={` bg-green-200 h-screen px-4 md:px-5`}>
+    //   <Hero 
+    //     setPlayStatus={setPlayStatus}
+    //     playStatus={playStatus}
+    //     setHeroCount={setHeroCount}
+    //     heroCount={heroCount}
+    //     heroData={heroData[heroCount]}
+    //   />
+    //   {/* <AboutMe/> */}
+    //   {/* <ProjectsSection/> */}
+    // </div>
+
+
+    <>
+      <div className="app-content-area flex flex-col h-[100vh] sm:px-10 px-5">
+        <NavBar/>
+        <Hero 
+          setPlayStatus={setPlayStatus}
+          playStatus={playStatus}
+          setHeroCount={setHeroCount}
+          heroCount={heroCount}
+          heroData={heroData[heroCount]}
+        />
+      </div>
+      <Background playStatus = {playStatus} heroCount={heroCount}/>
+    </>
+
+
+
     // <div className="flex p-10 w-full flex-col items-center justify-center gap-6">
     //   <div className="flex gap-2">
     //     <button className="rounded bg-[#1D1E18] px-6 py-2 text-[#D9FFF5]">Button</button>
@@ -127,16 +159,7 @@ export default function Home() {
     //     </div>
     //   </div>
     // </div>
-    <div className={``}>
-      {/* <Hero 
-        setPlayStatus={setPlayStatus}
-        playStatus={playStatus}
-        setHeroCount={setHeroCount}
-        heroCount={heroCount}
-        heroData={heroData[heroCount]}
-      /> */}
-      <AboutMe/>
-    </div>
+    
 
   );
 }

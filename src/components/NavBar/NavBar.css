@@ -1,0 +1,41 @@
+/* .nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px 120px;
+    color: white;
+    
+    max-width: 2700px;
+    margin-inline: auto;
+    padding-inline: 120px;
+} */
+.nav-logo{
+    font-family: Outfit;
+}
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+.nav-menu li:hover{
+    color: orangered;
+    cursor: pointer;
+}
+.nav-menu-Link{
+    text-decoration: none;
+    color: inherit;
+}
+/* .nav-CV-btn{
+    font-size: 20px;
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    padding: 20px 38px;
+    background: #fff;
+    color: #262626;
+    cursor: pointer;
+} */
+/* .nav-CV-btn:hover{
+    opacity: 0.9;
+    background: #262626;
+} */
