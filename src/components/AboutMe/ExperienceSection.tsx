@@ -3,14 +3,14 @@ import PastExperienceEntry from './PastExperienceEntry'
 
 import aboutMeData from './AboutMeData.json'
 
-interface propsArrayOfWorkExperiences{
-    nameOfWorkPlace: string;
-    roleAtWorkPlace: string;
-    durationAtWorkPlace: string;
-    // descriptionAboutWork: [
-    //     string, string[]
-    // ];
-}
+// interface propsArrayOfWorkExperiences{
+//     nameOfWorkPlace: string;
+//     roleAtWorkPlace: string;
+//     durationAtWorkPlace: string;
+//     // descriptionAboutWork: [
+//     //     string, string[]
+//     // ];
+// }
 const ExperienceSection = () => {
   return (
     <div className="bg-[#F4F6F8] border-1 border-[#7F8C8D]/10 flex flex-col rounded-2xl p-7 grow overflow-auto pb-10">

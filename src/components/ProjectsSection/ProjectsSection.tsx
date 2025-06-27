@@ -1,9 +1,7 @@
 import React from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../ui/tabs'
-import ProjectsTimeline from './UnrealProjects'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../ui/card'
-import Image from 'next/image'
-import { Calendar, ExternalLink, Github } from 'lucide-react'
+import { Calendar, ExternalLink } from 'lucide-react'
 import { Button } from '../ui/button'
 import Link from 'next/link'
 import { Badge } from '../ui/badge'
@@ -263,7 +261,7 @@ const ProjectsSection = () => {
             <div className="max-w-3xl">
               <h1 className="text-[#2C3E50] text-4xl text-center font-bold tracking-tight sm:text-5xl mb-4">My Work</h1>
               <p className="text-lg text-center text-[#2C3E50]/80">
-                A collection of projects I've worked on, showcasing different technologies and problem-solving approaches.
+                A collection of projects I&aposve worked on, showcasing different technologies and problem-solving approaches.
               </p>
             </div>
             <TabsList className='mx-auto h-12 bg-[#F4F6F8] p-1.5'>
