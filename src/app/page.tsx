@@ -9,7 +9,7 @@ import NavBar  from "@/components/NavBar/NavBar";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  let heroData = [
+  const heroData = [
     {text1: "Transforming Concepts", text2: "into 3D Realities"},
     {text1: "Mastering the Art of", text2: "Technical 3D Design"},
     {text1: "Innovative 3D Solutions", text2: "for the Digital Age"}
@@ -17,10 +17,10 @@ export default function Home() {
   const [heroCount, setHeroCount] = useState(0);
   const [playStatus, setPlayStatus] = useState(false);
 
-  const url = '';
+  // const url = '';
 
   useEffect(()=> {
-    const timerId = setInterval(()=>{
+    setInterval(()=>{
       setHeroCount((count) => (count===0) ? 2 : count - 1 )
     }, 6000)
   }, []); // end useEffect

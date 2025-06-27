@@ -12,6 +12,8 @@ import unrealLogo from '../../assets/my-stack-icons/Unreal Engine.png'
 import vsCodeLogo from '../../assets/my-stack-icons/vscode.svg'
 import blenderLogo from '../../assets/my-stack-icons/blender.svg'
 import houdiniLogo from '../../assets/my-stack-icons/houdini-logo2.png'
+import profilePic from '../../assets/pp.jpg'
+import Image from 'next/image'
 
 
 export const AboutMe = () => {
@@ -19,7 +21,7 @@ export const AboutMe = () => {
     <>
       <div className="flex md:h-[100vh] p-4 gap-4 bg-[#FFFFFF] text-neutral-300 flex-col md:flex-row">
         <div className="flex flex-col gap-4">
-          <div className="bg-[#F4F6F8] border-1 border-neutral-200/10 flex justify-center items-start rounded-2xl md:h-[25vw] md:w-[25vw] md:min-w-[250px] overflow-hidden"> <img className='w-full scale-155' src="https://mansoorysfxi.github.io/Portfolio/pp.jpg" alt="" /></div>
+          <div className="bg-[#F4F6F8] border-1 border-neutral-200/10 flex justify-center items-start rounded-2xl md:h-[25vw] md:w-[25vw] md:min-w-[250px] overflow-hidden"> <Image className='w-full scale-155' src={profilePic} alt="" /></div>
           <BioSection />
         </div>
         <div className="flex flex-col gap-4 grow overflow-x-auto">
