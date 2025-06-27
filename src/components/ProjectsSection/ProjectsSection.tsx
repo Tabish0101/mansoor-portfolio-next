@@ -93,22 +93,22 @@ const ProjectsSection = () => {
     <div className='bg-purple-200/0 p-0 space-y-4'>
       {/* <h1 className='text-3xl font-bold'>My Projects</h1> */}
       {/* Header Section */}
-      <div className="border-b bg-muted/30">
-        <div className="container mx-auto px-4 py-16">
+      <div className="border-b ">
+        <div className="container mx-auto px-6 py-16">
           <div className="max-w-3xl">
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-4">My Projects</h1>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-lg text-muted-foreground">
               A collection of projects I've worked on, showcasing different technologies and problem-solving approaches.
             </p>
           </div>
         </div>
       </div>
       <Tabs defaultValue="all" className="">
-        <TabsList className='mx-auto'>
-          <TabsTrigger value="all">All</TabsTrigger>
-          <TabsTrigger value="unreal">Unreal Engine</TabsTrigger>
-          <TabsTrigger value="houdini">Houdini</TabsTrigger>
-          <TabsTrigger value="blender">Blender</TabsTrigger>
+        <TabsList className='mx-auto h-10 bg-[#F4F6F8]'>
+          <TabsTrigger className='cursor-pointer' value="all">All</TabsTrigger>
+          <TabsTrigger className='cursor-pointer' value="unreal">Unreal Engine</TabsTrigger>
+          <TabsTrigger className='cursor-pointer' value="houdini">Houdini</TabsTrigger>
+          <TabsTrigger className='cursor-pointer' value="blender">Blender</TabsTrigger>
         </TabsList>
 
         {/* All projects tab */}
@@ -184,7 +184,7 @@ interface propsProject_Card{
 }
 const Project_Card: React.FC<propsProject_Card> = ({data }) => {
   return(
-    <Card key={data.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+    <Card key={data.id} className="overflow-hidden hover:shadow-lg transition-shadow bg-[#F4F6F8] border-[#7F8C8D]/10">
       <div className="aspect-video relative overflow-hidden">
         <Image
           src={data.image || "/placeholder.svg"}
@@ -195,36 +195,36 @@ const Project_Card: React.FC<propsProject_Card> = ({data }) => {
       </div>
       <CardHeader>
         <div className="flex items-center justify-between">
-          <CardTitle className="text-xl">{data.title}</CardTitle>
-          <div className="flex items-center text-sm text-muted-foreground">
+          <CardTitle className="text-xl text-[#2C3E50]">{data.title}</CardTitle>
+          <div className="flex items-center text-sm text-[#7F8C8D]">
             <Calendar className="w-4 h-4 mr-1" />
             {data.date}
           </div>
         </div>
-        <CardDescription className="line-clamp-3">{data.description}</CardDescription>
+        <CardDescription className="line-clamp-3 text-[#2C3E50]/80">{data.description}</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="flex flex-wrap gap-2">
           {data.tags.map((tag) => (
-            <Badge key={tag} variant="secondary" className="text-xs rounded-full">
+            <Badge key={tag} variant="secondary" className="text-xs text-[#2C3E50] rounded-full bg-[#7F8C8D]/15">
               {tag}
             </Badge>
           ))}
         </div>
       </CardContent>
       <CardFooter className="flex gap-2">
-        <Button asChild size="sm" className="flex-1">
+        <Button asChild  className="flex-1 bg-[#2C3E50] hover:bg-[#2C3E50]/90">
           <Link href={data.liveUrl}>
             <ExternalLink className="w-4 h-4 mr-2" />
-            Live Demo
+            View on TouTube
           </Link>
         </Button>
-        <Button asChild variant="outline" size="sm" className="flex-1">
+        {/* <Button asChild variant="outline" size="sm" className="flex-1">
           <Link href={data.githubUrl}>
             <Github className="w-4 h-4 mr-2" />
             Code
           </Link>
-        </Button>
+        </Button> */}
       </CardFooter>
     </Card>
   )
