@@ -1,4 +1,4 @@
-import { AboutMe } from "@/components/AboutMe/AboutMe"
+import AboutMe from "@/components/AboutMe/AboutMe"
 
 const AboutMePage = () => {
   return (

@@ -1,4 +1,8 @@
-import React from 'react'
+"use client";
+
+import React from 'react';
+import { motion, Variants } from 'framer-motion';
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../ui/tabs'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../ui/card'
 import { Calendar, ExternalLink } from 'lucide-react'
@@ -6,6 +10,30 @@ import { Button } from '../ui/button'
 import Link from 'next/link'
 import { Badge } from '../ui/badge'
 
+// Animations
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.15,
+    },
+  },
+}
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 10 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 15,
+    },
+  },
+}
 
 const projects = [
     {
@@ -272,73 +300,80 @@ const ProjectsSection = () => {
               <TabsTrigger className='cursor-pointer  text-[#2C3E50]' value="misc">MISC</TabsTrigger>
             </TabsList>
           </div>
-
-          
         </div>
-        
 
         {/* All projects tab */}
         <TabsContent value="all">
           <div className="container mx-auto px-4 py-16">
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <motion.div variants={containerVariants} initial="hidden" animate="visible" className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {projects.map((project_data) => {
                 return(
-                  <Project_Card key={project_data.id} data={project_data}/>
+                  <motion.div variants={itemVariants} key={project_data.id}>
+                    <Project_Card key={project_data.id} data={project_data}/>
+                  </motion.div>
                 )
               })}
-            </div>
+            </motion.div>
           </div>
         </TabsContent>
 
         {/* Unreal projects tab */}
         <TabsContent value="unreal">
           <div className="container mx-auto px-4 py-16">
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <motion.div variants={containerVariants} initial="hidden" animate="visible" className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {unrealProjects.map((project_data) => {
                 return(
-                  <Project_Card key={project_data.id} data={project_data}/>
+                  <motion.div variants={itemVariants} key={project_data.id}>
+                    <Project_Card key={project_data.id} data={project_data}/>
+                  </motion.div>
                 )
               })}
-            </div>
+            </motion.div>
           </div>
         </TabsContent>
 
         {/* Houdini projects tab */}
         <TabsContent value="houdini">
           <div className="container mx-auto px-4 py-16">
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <motion.div variants={containerVariants} initial="hidden" animate="visible" className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {houdiniProjects.map((project_data) => {
                 return(
-                  <Project_Card key={project_data.id} data={project_data}/>
+                  <motion.div variants={itemVariants} key={project_data.id}>
+                    <Project_Card key={project_data.id} data={project_data}/>
+                  </motion.div>
                 )
               })}
-            </div>
+            </motion.div>
           </div>
         </TabsContent>
 
         {/* Blender projects tab */}
         <TabsContent value="blender">
           <div className="container mx-auto px-4 py-16">
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <motion.div variants={containerVariants} initial="hidden" animate="visible" className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {blenderProjects.map((project_data) => {
                 return(
-                  <Project_Card key={project_data.id} data={project_data}/>
+                  <motion.div variants={itemVariants} key={project_data.id}>
+                    <Project_Card key={project_data.id} data={project_data}/>
+                  </motion.div>
                 )
               })}
-            </div>
+            </motion.div>
           </div>
         </TabsContent>
 
         {/* MISC projects tab */}
         <TabsContent value="misc">
           <div className="container mx-auto px-4 py-16">
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <motion.div variants={containerVariants} initial="hidden" animate="visible" className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {miscProjects.map((project_data) => {
                 return(
-                  <Project_Card key={project_data.id} data={project_data}/>
+                  <motion.div variants={itemVariants} key={project_data.id}>
+                    <Project_Card key={project_data.id} data={project_data}/>
+                  </motion.div>
                 )
               })}
-            </div>
+            </motion.div>
           </div>
         </TabsContent>
 
@@ -364,7 +399,7 @@ interface propsProject_Card{
 }
 const Project_Card: React.FC<propsProject_Card> = ({data }) => {
   return(
-    <Card key={data.id} className="overflow-hidden hover:shadow-lg hover:scale-101 transition-shadow bg-[#F4F6F8] border-[1px] border-[#7F8C8D]/10 pt-0">
+    <Card key={data.id} className="h-full overflow-hidden hover:shadow-lg hover:scale-101 transition duration-75 ease-out bg-[#F4F6F8] border-[1px] border-[#7F8C8D]/10 pt-0">
       <div className="aspect-video relative overflow-hidden">
         {/* <Image
           src={data.image || "/placeholder.svg"}

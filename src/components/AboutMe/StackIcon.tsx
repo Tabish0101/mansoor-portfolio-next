@@ -28,4 +28,4 @@ const StackIcon: React.FC<propsStackIcon> = ({
   )
 }
 
-export default StackIcon
+export default StackIcon;

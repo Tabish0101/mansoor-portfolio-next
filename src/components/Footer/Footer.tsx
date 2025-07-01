@@ -1,6 +1,8 @@
 import { Separator } from "@/components/ui/separator"
-import { Instagram, Linkedin, Mail, Phone, MapPin, Github, Facebook } from "lucide-react"
+import { Instagram, Linkedin, Mail, Phone, MapPin, Github } from "lucide-react"
 import Link from "next/link"
+
+import aboutMeData from '../AboutMe/AboutMeData.json'
 
 export default function Footer() {
   return (
@@ -18,22 +20,19 @@ export default function Footer() {
               visualization. Bringing imagination to life through cutting-edge 3D technology.
             </p>
             <div className="flex space-x-4">
-              <Link href="#" className="text-slate-400 hover:text-blue-400 transition-colors">
-                <Instagram className="h-5 w-5" />
-                <span className="sr-only">Instagram</span>
-              </Link>
-              <Link href="#" className="text-slate-400 hover:text-blue-400 transition-colors">
-                <Facebook className="h-5 w-5" />
-                <span className="sr-only">Twitter</span>
-              </Link>
-              <Link href="#" className="text-slate-400 hover:text-blue-400 transition-colors">
+              <Link href={aboutMeData.linkedInUrl} className="text-slate-400 hover:text-blue-400 transition-colors">
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
               </Link>
-              <Link href="#" className="text-slate-400 hover:text-blue-400 transition-colors">
+              <Link href={aboutMeData.gitHubUrl} className="text-slate-400 hover:text-blue-400 transition-colors">
                 <Github className="h-5 w-5" />
                 <span className="sr-only">GitHub</span>
               </Link>
+              <Link href={aboutMeData.instagramUrl} className="text-slate-400 hover:text-blue-400 transition-colors">
+                <Instagram className="h-5 w-5" />
+                <span className="sr-only">Instagram</span>
+              </Link>
+              
             </div>
           </div>
 
@@ -64,14 +63,14 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Get In Touch</h4>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
-                <Mail className="h-4 w-4 text-slate-400" />
-                <Link href="mailto:hello@alexchen3d.com" className="text-slate-300 hover:text-white transition-colors">
-                  mansoorak.1010@gmail.com
+                <Mail className="h-4 min-w-4 text-slate-400" />
+                <Link href={`mailto:${aboutMeData.email}`} className="text-slate-300 hover:text-white transition-colors">
+                  {aboutMeData.email}
                 </Link>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-slate-400" />
-                <span className="text-slate-300">+1 (555) 123-4567</span>
+                <span className="text-slate-300">{aboutMeData.phoneNumber}</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-4 w-4 text-slate-400" />

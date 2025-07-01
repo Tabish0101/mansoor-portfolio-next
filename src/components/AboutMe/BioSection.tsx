@@ -1,6 +1,8 @@
 "use client";
 
 import React from 'react'
+import { motion, Variants} from "motion/react"
+
 import { IoLogoLinkedin } from "react-icons/io";
 import { FaGithub } from "react-icons/fa";
 // import { IoLogoWhatsapp } from "react-icons/io";
@@ -9,6 +11,63 @@ import { FaInstagram } from "react-icons/fa";
 import aboutMeData from './AboutMeData.json'
 
 
+// Animations
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.15,
+    },
+  },
+}
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 10 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 15,
+    },
+  },
+}
+
+// const socialIconVariants: Variants = {
+//   hidden: { opacity: 0, scale: 0.8 },
+//   visible: {
+//     opacity: 1,
+//     scale: 1,
+//     transition: {
+//       type: "spring",
+//       stiffness: 200,
+//       damping: 20,
+//     },
+//   },
+//   hover: {
+//     scale: 1.08,
+//     transition: {
+//       type: "spring",
+//       stiffness: 400,
+//       damping: 10,
+//     },
+//   },
+//   tap: { scale: 0.95 },
+// }
+
+const hoverEffectsForButtons: Variants = {
+  whileHover: { scale: 1.08,
+    transition: {
+      type: "spring",
+      stiffness: 200,
+      damping: 10,
+    },
+   },
+  whileTap: { scale: 0.95 },
+}
 
 const BioSection = () => {
     function redirectToNewPage(url: string){
@@ -26,7 +85,7 @@ const BioSection = () => {
   return (
     <>
         {/* <!-- Bio --> */}
-        <div className="bg-[#F4F6F8] border-1 border-[#7F8C8D]/10 flex flex-col justify-between rounded-2xl grow p-5 overflow-auto scrollbar-hidden">
+        <div className="bg-[#F4F6F8] border-1 border-[#7F8C8D]/10 flex flex-col justify-between rounded-2xl h-full p-5 overflow-auto scrollbar-hidden">
 
             {/* <!-- Bio Inner div --> */}
             <div className="overflow-auto scrollbar-custom grow flex flex-col justify-between">
@@ -40,22 +99,57 @@ const BioSection = () => {
                 <div className="text-sm">
                     <div className=" py-1 flex justify-between items-center">
                         <div className=" font-bold text-[12px] text-[#2C3E50]">Website</div>
-                        <div className="text-[10px] text-[#7F8C8D]">{aboutMeData.websiteUrl}</div>
+                        <div className="text-[11px] text-[#7F8C8D]">{aboutMeData.websiteUrl}</div>
                     </div>
                     <div className=" py-1 flex justify-between items-center">
                         <div className=" font-bold text-[12px] text-[#2C3E50]">Email</div>
-                        <div className="text-[10px] text-[#7F8C8D]">{aboutMeData.email}</div>
+                        <div className="text-[11px] text-[#7F8C8D]">{aboutMeData.email}</div>
                     </div>
                     <div className=" py-1 flex justify-between items-center">
                         <div className="font-bold text-[12px] text-[#2C3E50]">Phone</div>
-                        <div className="text-[10px] text-[#7F8C8D]">{aboutMeData.phoneNumber}</div>
+                        <div className="text-[11px] text-[#7F8C8D]">{aboutMeData.phoneNumber}</div>
                     </div>
                 </div>
-                <div className="flex gap-3"> 
-                    <div onClick={() => redirectToNewPage(aboutMeData.linkedInUrl)} className="text-2xl flex justify-center items-center text-[#2C3E50] hover:text-[#2C3E50]/70 cursor-pointer"><IoLogoLinkedin/></div>
-                    <div onClick={() => redirectToNewPage(aboutMeData.gitHubUrl)} className="text-xl flex justify-center items-center text-[#2C3E50] hover:text-[#2C3E50]/70 cursor-pointer"><FaGithub/></div>
-                    <div onClick={() => redirectToNewPage(aboutMeData.instagramUrl)} className="text-xl flex justify-center items-center text-[#2C3E50] hover:text-[#2C3E50]/70 cursor-pointer"><FaInstagram/></div>
-                </div>
+                <motion.div 
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                    className="flex gap-3"
+                > 
+                    <motion.div variants={itemVariants} >
+                        <motion.div 
+                            variants={hoverEffectsForButtons} 
+                            whileHover={"whileHover"} 
+                            whileTap={"whileTap"} 
+                            onClick={() => redirectToNewPage(aboutMeData.linkedInUrl)} 
+                            className="text-2xl flex justify-center items-center text-[#2C3E50] hover:text-[#2C3E50]/70 cursor-pointer"
+                        >
+                            <IoLogoLinkedin className='h-6'/>
+                        </motion.div>
+                    </motion.div>
+                    <motion.div variants={itemVariants}>
+                        <motion.div 
+                            variants={hoverEffectsForButtons} 
+                            whileHover={"whileHover"} 
+                            whileTap={"whileTap"} 
+                            onClick={() => redirectToNewPage(aboutMeData.gitHubUrl)} 
+                            className="text-xl flex justify-center items-center text-[#2C3E50] hover:text-[#2C3E50]/70 cursor-pointer"
+                        >
+                            <FaGithub className='h-6'/>
+                        </motion.div>
+                    </motion.div>
+                    <motion.div variants={itemVariants}>
+                        <motion.div 
+                            variants={hoverEffectsForButtons} 
+                            whileHover={"whileHover"} 
+                            whileTap={"whileTap"} 
+                            onClick={() => redirectToNewPage(aboutMeData.instagramUrl)} 
+                            className="text-xl flex justify-center items-center text-[#2C3E50] hover:text-[#2C3E50]/70 cursor-pointer"
+                        >
+                            <FaInstagram className='h-6'/>
+                        </motion.div>
+                    </motion.div>
+                </motion.div>
             </div>
 
             {/* <!-- Bio Button --> */}

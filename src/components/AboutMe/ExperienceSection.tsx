@@ -13,7 +13,7 @@ import aboutMeData from './AboutMeData.json'
 // }
 const ExperienceSection = () => {
   return (
-    <div className="bg-[#F4F6F8] border-1 border-[#7F8C8D]/10 flex flex-col rounded-2xl p-7 grow overflow-auto pb-10">
+    <div className="bg-[#F4F6F8] border-1 border-[#7F8C8D]/10 flex flex-col rounded-2xl p-7 h-full overflow-auto pb-10">
         <div className='text-xl font-bold mb-10 sm:mb-5'>
             <h2 className='text-[#2C3E50]'>Work Experience</h2>
             {/* <hr className='my-1 text-white/20'/> */}
